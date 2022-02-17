@@ -26,10 +26,14 @@ class TagImg {
           };
 
           if (attrs.containsKey(kAttributeImgHeight)) {
-            styles[kCssHeight] = '${attrs[kAttributeImgHeight]}px';
+            final height = '${attrs[kAttributeImgHeight]}';
+            styles[kCssHeight] =
+                (num.tryParse(height) != null) ? '${height}px' : height;
           }
           if (attrs.containsKey(kAttributeImgWidth)) {
-            styles[kCssWidth] = '${attrs[kAttributeImgWidth]}px';
+            final width = '${attrs[kAttributeImgWidth]}';
+            styles[kCssWidth] =
+                (num.tryParse(width) != null) ? '${width}px' : width;
           }
 
           return styles;
