@@ -41,6 +41,7 @@ class FwfhTextStyle extends _TextStyleProxy {
 
   @override
   TextStyle apply({
+    List<ui.FontVariation>? fontVariations,
     Color? color,
     Color? backgroundColor,
     TextDecoration? decoration,
@@ -101,6 +102,7 @@ class FwfhTextStyle extends _TextStyleProxy {
 
   @override
   TextStyle copyWith({
+    List<ui.FontVariation>? fontVariations,
     bool? inherit,
     Color? color,
     Color? backgroundColor,
@@ -138,6 +140,7 @@ class FwfhTextStyle extends _TextStyleProxy {
     );
     return FwfhTextStyle.from(
       TextStyle(
+        fontVariations: null,
         inherit: inherit ?? this.inherit,
         color: this.foreground == null && foreground == null
             ? color ?? this.color
@@ -190,7 +193,7 @@ abstract class _TextStyleProxy implements TextStyle {
   @override
   // This is an override on Flutter greater than 3.1
   // ignore: override_on_non_overriding_member
-  List<ui.FontVariation>? get fontVariations => null;
+  List<ui.FontVariation>? get fontVariations => ref.fontVariations;
 
   @override
   Paint? get background => ref.background;
