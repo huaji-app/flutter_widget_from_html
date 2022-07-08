@@ -188,6 +188,11 @@ abstract class _TextStyleProxy implements TextStyle {
   _TextStyleProxy._(this.ref);
 
   @override
+  // This is an override on Flutter greater than 3.1
+  // ignore: override_on_non_overriding_member
+  List<ui.FontVariation>? get fontVariations => null;
+
+  @override
   Paint? get background => ref.background;
 
   @override
